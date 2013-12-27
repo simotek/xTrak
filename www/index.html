@@ -1,0 +1,146 @@
+<!--
+Copyright Simon Lees 2013
+This has a dual license it may be used in accordance with the terms contained in
+a written agreement between you and Simon Lees.
+
+GNU General Public License Usage
+Alternatively, this file may be used under the terms of the GNU
+General Public License version 2.1 as published by the Free Software
+Foundation and appearing in the file LICENSE.GPL included in the
+packaging of this file.  Please review the following information to
+ensure the GNU General Public License version 2.1 requirements
+will be met: http://www.gnu.org/licenses/old-licenses/gpl-2.1.html.
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>xTrack</title>
+	
+	<script type="text/javascript" src="js/cordova-1.7.0.js"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCznE-eFXpH-8PCKKPdnuNME4JgW-2hmJA&sensor=false"></script>
+	<script type="text/javascript" src="js/json2.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile-1.1.0.min.js"></script>
+    <script type="text/javascript" src="js/xt_gps.js"></script>
+    <script type="text/javascript" src="js/xt_history.js"></script>
+    <script type="text/javascript" src="js/xt_home.js"></script>
+    <script type="text/javascript" src="js/xt_record.js"></script>
+	<link rel="stylesheet" href="css/jquery.mobile-1.1.0.min.css" />
+	
+</head>
+<body>
+<!-- Start of Home page -->
+<div data-role="page" id="home">
+
+	<div data-role="header">
+	
+		<h1>Home</h1>
+	
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
+				<li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
+				<li><a href="#history" data-transition="none" data-icon="star">History</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="content">
+		<p>Welcome to the <em>xTrack</em> app. By clicking <em>Track Workout</em> you can record your workouts using the GPS feature on your phone. Learn how to build this app by reading <em>mobile.tutsplus.com</em>.</p>
+	
+		<button id="home_network_button" data-icon="check">Internet Access Enabled</button>
+		<button id="home_clearstorage_button">Clear local storage</button>
+		<button id="home_seedgps_button">Load Seed GPS Data</button>
+	</div>
+
+
+</div>
+<!-- End of Home page -->
+
+<!-- Start of Trackwork Out page -->
+<div data-role="page" id="startTracking">
+
+	<div data-role="header">
+		<h1>Track Workout</h1>
+		
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
+				<li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
+				<li><a href="#history" data-transition="none" data-icon="star">History</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="content">	
+		<p id="startTracking_status"></p>
+			<div data-role="fieldcontain" class="ui-hide-label">
+				<label for="track_id">Track ID/Name:</label>
+				<input type="text" name="track_id" id="track_id" placeholder="Workout ID/Name"/>
+			</div>
+
+		<button data-role="button" id="startTracking_start">Start Tracking</button>
+		<button data-role="button" id="startTracking_stop">Stop Tracking</button>  
+		
+				<p id="startTracking_info"></p>
+		
+		
+	</div>
+
+
+</div><!-- /page -->
+
+<!-- Start of the History page -->
+<div data-role="page" id="history">
+
+    <div data-role="header">
+        <h1>History</h1>
+        
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
+                <li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
+                <li><a href="#history" data-transition="none" data-icon="star">History</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div data-role="content">	
+        <p id="tracks_recorded"></p>
+        
+        <ul data-role="listview" id="history_tracklist">
+
+        </ul>
+    </div>
+
+
+</div><!-- /page -->
+
+<!-- Track Info page -->
+<div data-role="page" id="track_info">
+
+	<div data-role="header">
+		<h1>Viewing Single Workout</h1>
+		
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#home" data-transition="none" data-icon="home">Home</a></li>
+				<li><a href="#startTracking" data-transition="none" data-icon="plus">Track Workout</a></li>
+				<li><a href="#history" data-transition="none" data-icon="star">History</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<div data-role="content">	
+		<p id="track_info_info"></p>
+		
+		<div id="map_canvas" style="position:absolute;bottom:0;left:0;width:100%;height:300px;"></div>
+		
+	</div>
+
+
+</div><!-- /page -->
+
+
+</body>
+</html>

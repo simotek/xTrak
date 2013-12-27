@@ -1,0 +1,52 @@
+* refresh item history
+* delete item
+
+* Non Paused time / Total Time
+* Lap time
+* Workout type
+** GPS Based
+*** Walk
+*** Run
+*** Cycling
+*** Mountain Biking
+*** GPS 
+
+** Weight
+*** sub type
+*** Rounds - Reps
+** Circuit / WOD
+*** List of activities
+
+* Route comparason
+* history
+** Callander
+* Statistics
+** Time
+*** Month
+*** Year
+*** Abetory
+** Km
+** Ave speeds
+** Weight Graphs
+
+
+---
+
+Record
+
+
+Pairs of Pause, Resumes
+list of laps
+
+* List for each activity type
+** GPS Based
+** Lifting
+*** List of sub items
+** Circuit
+*** List of sub items
+
+
+* Sub item
+** Key
+** Weight
+** Other,  Text item
